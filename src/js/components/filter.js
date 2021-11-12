@@ -9,9 +9,11 @@ let releaseDateDesc = 'primary_release_date.desc';
 let releaseDateAsk = 'primary_release_date.asc';
 let popularityDesc = 'popularity.desc';
 let popularityAsc = 'popularity.asc';
+let releaseTitleDesc = "original_title.desc"
+let releaseTitleAsc = "original_title.asc"
 
-let voteAverageAsc = 'vote_average.asc';
-let voteAverageDesc = 'vote_average.desc'
+
+
 //раскрытие списка сортировки
 
 const sort = document.querySelector('.filter-muvie__list');
@@ -40,7 +42,7 @@ function filterPopularityAsc() {
 }
 
 
-function filterReleaseDesc() {
+function filterReleaseDateDesc() {
     filterGlobal('', '', releaseDateDesc)
         .then(data => {
             renderMovies(data.results)
@@ -49,7 +51,7 @@ function filterReleaseDesc() {
         });
 }
 
-function filterReleaseAsk() {
+function filterReleaseDateAsk() {
     filterGlobal('', '', '', releaseDateAsk)
         .then(data => {
             renderMovies(data.results)
@@ -57,8 +59,16 @@ function filterReleaseAsk() {
             alert("error");
         });
 }
-function filterReleaseAsk() {
+function filterTitleDesc() {
     filterGlobal('', '', '', '', releaseTitleDesc)
+        .then(data => {
+            renderMovies(data.results)
+        }).catch(() => {
+            alert("error");
+        });
+}
+function filterTitleAsc() {
+    filterGlobal('', '', '', '', '', releaseTitleAsc)
         .then(data => {
             renderMovies(data.results)
         }).catch(() => {
@@ -78,15 +88,23 @@ function filterMain(data) {
         e.preventDefault()
         console.log(e.target);
         const linck = e.target.dataset.atribute
+
         if (linck === "release-date-desc") {
-            filterReleaseDesc()
+            filterReleaseDateDesc()
         } else if (linck === "release-date-ask") {
-            filterReleaseAsk()
+            filterReleaseDateAsk()
+
         } else if (linck === "popularity-desc") {
             filterPopularityDesc()
         } else if (linck === "popularity-asc") {
             filterPopularityAsc()
+
+        } else if (linck === "original-title-desc") {
+            filterTitleDesc()
+        } else if (linck === "original-title-asc") {
+            filterTitleAsc()
         }
+
     })
     // })
 }
