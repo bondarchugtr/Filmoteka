@@ -1,6 +1,6 @@
-import { filterGlobal } from '../components/fetch-filter';
+import { filterGlobal } from './fetch-filter';
 import { renderGallery, renderMovies } from '../layout/gallery';
-import filter from '../../views/components/filter.hbs';
+import filter from '../../views/components/filter_sort.hbs';
 
 const main = document.querySelector('.hero')
 
@@ -13,16 +13,7 @@ let releaseTitleDesc = "original_title.desc"
 let releaseTitleAsc = "original_title.asc"
 
 
-
 //раскрытие списка сортировки
-
-const sort = document.querySelector('.filter-muvie__list');
-
-function onOpenSort(evt) {
-    evt.preventDefault()
-    console.log('object');
-}
-
 
 function filterPopularityDesc() {
     filterGlobal(popularityDesc)
@@ -40,7 +31,6 @@ function filterPopularityAsc() {
             alert("error");
         });
 }
-
 
 function filterReleaseDateDesc() {
     filterGlobal('', '', releaseDateDesc)

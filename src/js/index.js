@@ -14,7 +14,8 @@ import './components/color_switcher';
 import './components/modal';
 import './components/fetch-filter';
 import './components/error';
-import './components/filter';
+import './components/filter-sort';
+import './components/filter_genres';
 import './components/spinner';
 //=========layout===============
 //=========static===============

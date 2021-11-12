@@ -43,6 +43,7 @@ export function renderParamsCard(id) {
 
 export function genreMovie(genre) {
   const REQUEST_ADRESS = `${GENRE_URL}/list?api_key=${API_KEY}&language=en-US`
+  console.log(REQUEST_ADRESS);
   return baseFetch(REQUEST_ADRESS)
 }
 function baseFetch(REQUEST_ADRESS) {
