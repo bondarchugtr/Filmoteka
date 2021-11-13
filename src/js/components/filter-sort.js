@@ -67,39 +67,43 @@ function filterTitleAsc() {
 }
 
 
-
 function filterMain(data) {
     const marcup = filter(data)
+    console.log(marcup);
     main.insertAdjacentHTML("beforeend", marcup);
-    const filterList = document.querySelector('.filter-list')
-    console.log(filterList);
-    // filterList.forEach(el => {
-    filterList.addEventListener('click', e => {
-        e.preventDefault()
-        console.log(e.target);
-        const linck = e.target.dataset.atribute
+}
+filterMain()
 
-        if (linck === "release-date-desc") {
-            filterReleaseDateDesc()
-        } else if (linck === "release-date-ask") {
-            filterReleaseDateAsk()
 
-        } else if (linck === "popularity-desc") {
-            filterPopularityDesc()
-        } else if (linck === "popularity-asc") {
-            filterPopularityAsc()
+const filterList = document.querySelector('.filter-list')
+console.log(filterList);
+filterList.addEventListener('click', onRenderFiletr)
 
-        } else if (linck === "original-title-desc") {
-            filterTitleDesc()
-        } else if (linck === "original-title-asc") {
-            filterTitleAsc()
-        }
 
-    })
-    // })
+function onRenderFiletr(evt) {
+    evt.preventDefault()
+    const linck = evt.target.dataset.atribute
+    if (linck === "release-date-desc") {
+        filterReleaseDateDesc()
+    } else if (linck === "release-date-ask") {
+        filterReleaseDateAsk()
+
+    } else if (linck === "popularity-desc") {
+        filterPopularityDesc()
+    } else if (linck === "popularity-asc") {
+        filterPopularityAsc()
+
+    } else if (linck === "original-title-desc") {
+        filterTitleDesc()
+    } else if (linck === "original-title-asc") {
+        filterTitleAsc()
+    }
 }
 
-filterMain()
+
+
+
+
 
 
 
