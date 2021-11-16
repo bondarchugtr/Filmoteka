@@ -18,9 +18,11 @@
 @import './components/nuv_list';
 @import './components/pagination_list';
 @import './components/modal';
+@import './components/palitre';
 @import './components/filter';
 @import './components/scrollbar';
 @import './components/spinner';
+@import './components/null_in_box';
 //=========static===============
 @import './layout/static/header';
 @import './layout/static/footer';
@@ -31,4 +33,5 @@
 @import './layout/modal_team_list';
 @import './layout/hero_home';
 @import './layout/hero_my_list';
+@import './layout/modal_theme';
 @import './layout/error';

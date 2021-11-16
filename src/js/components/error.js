@@ -1,11 +1,12 @@
 import errorRend from '../../views/components/error_search.hbs';
 import errorServ from '../../views/components/error_server.hbs';
-import img from '../../images/img/png/error/404.webp';
+import img from '../../images/img/png/error/404_error-preview.png';
 import imgMainError from '../../images/img/png/error/404-Error.png';
 export const imgMarkup = errorRend({ img });
 export const imgMarkupMain = errorServ({ imgMainError });
 import { renderGallery } from '../layout/gallery';
 import { clearInput } from '../layout/hero_home';
+import { seorchId } from '../layout/modal_one_movie.js';
 
 //выводит ошибку при не вверном вводе в поиске
 export function renderErrorSearch() {
@@ -18,6 +19,7 @@ export function renderErrorSearch() {
     if (el.target) {
       clearInput();
       renderGallery();
+      //seorchId()
     }
   });
 }

@@ -14,9 +14,9 @@ import './components/color_switcher';
 import './components/modal';
 import './components/fetch-filter';
 import './components/error';
-import './components/filter-sort';
-import './components/filter_genres';
+import './components/filter';
 import './components/spinner';
+import './components/appFirebase';
 //=========layout===============
 //=========static===============
 import './layout/static/header';
@@ -28,5 +28,8 @@ import './layout/modal_one_movie';
 import './layout/modal_team_list';
 import './layout/hero_home';
 import './layout/hero_my_list';
+import './layout/modal_theme';
+import './layout/palitre';
+import './layout/dark-theme';
 //=========test================
-import './test/firebase.js';
+// import './test/firebase.js';
