@@ -13,7 +13,6 @@ export function renderModal(modalContent) {
   renderBackdrop();
   refsModal().modal_content.innerHTML = modalContent;
   refsModal().modalClose.classList.add('modal_is-open');
-
   bodyFixPosition();
   modalAddListener();
 }

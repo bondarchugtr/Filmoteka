@@ -11,7 +11,7 @@ import { homeMarkUp, openInput } from '../layout/hero_home';
 import modal_markup from '../../views/components/modal.hbs';
 import svg from '../../images/svg/svg.svg';
 import spinner from '../../views/components/spinner.hbs';
-import { renderGallery } from '../layout/gallery'; 
+import { renderGallery } from '../layout/gallery';
 import { primaryPagination } from '../components/pagination-list';
 import { initGenres } from '../data/genres';
 import blockHelpTemplate from '../../views/components/block_help.hbs';
@@ -28,9 +28,14 @@ export function pageRender(value, heroValue, valueAdd, valueRemove) {
   const currentValue = value;
   const blockHelpMarkup = blockHelpTemplate({ svg });
   let markupFilter = '';
-  if (value.hero_tittle === 'Search Movies') {
-    markupFilter = filter({ svg, filterItemYear, filterItemGenre, filterItemSort });
 
+  if (value.hero_tittle === 'Search Movies') {
+    markupFilter = filter({
+      svg,
+      filterItemYear,
+      filterItemGenre,
+      filterItemSort,
+    });
   }
   refs.main.innerHTML = main({
     currentValue,
@@ -58,7 +63,4 @@ function addHeroClass(valueAdd, valueRemove) {
 }
 
 pageRender(mainTittle.home, homeMarkUp, 'hero--home', 'hero--my-library');
-initGenres()
-  .then(renderGallery)
-  .catch(renderGallery);
-
+initGenres().then(renderGallery).catch(renderGallery);
